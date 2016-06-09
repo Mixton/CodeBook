@@ -1,0 +1,17 @@
+
+<div class="follower-list panel panel-default">
+  <div class="panel-heading">
+    <span class="title">Peers</span>
+  </div>
+
+  <div class="panel-body">
+    <ul class="list">
+      {% for follower in followers %}
+        <li class="item">
+          {% include 'users/_follower.html' %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+

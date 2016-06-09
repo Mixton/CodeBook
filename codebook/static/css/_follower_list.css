@@ -1,0 +1,21 @@
+
+.follower-list {
+    position: fixed;
+    left: 0;
+    top: 76px;
+    width: 64px;
+}
+
+.follower-list ul.list, .follower-list ul.list li.item {
+    margin: 0;
+    padding: 0;
+}
+
+.follower-list ul.list {
+    display: table;
+}
+
+.follower-list ul.list li.item {
+    display: table-row;
+}
+

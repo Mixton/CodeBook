@@ -1,0 +1,33 @@
+{% extends 'codebook/__base.html' %}
+{% load staticfiles i18n %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="auth-panel panel panel-default">
+
+  <form action="{% url 'codebook:auth' %}" method="post">
+    {% csrf_token %}
+    <div class="input">
+      <input id="username" name="username" type="text" required
+             placeholder="Username">
+    </div>
+
+    <div class="input">
+      <input id="password" name="password" type="password" required
+             placeholder="Password">
+    </div>
+
+    <div class="input">
+      <input type="submit" value="Login">
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}
+
+

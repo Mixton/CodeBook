@@ -1,0 +1,39 @@
+{% extends 'codebook/__base.html' %}
+{% load staticfiles i18n %}
+{% load user_follow %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/user.css' %}">
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
+<link rel="stylesheet" href="{% static 'css/prism.css' %}">
+{% endblock %}
+
+{% block content %}
+
+  <div class="user-dialog panel panel-default">
+    <div class="panel-heading">
+      <span>{{ username }}</span>
+    </div>
+
+    <div class="panel-body">
+      {% if not request.user|isFollowing:username %}
+        <a href="{% url 'codebook:follow' username %}">Follow</a>
+      {% else %}
+      <span class="fa fa-check"></span>
+      <a href="{% url 'codebook:unfollow' username %}">Unfollow</a>
+      {% endif %}
+    </div>
+  </div>
+
+  {% block post_reel %}
+  <div class="post-reel">
+    {% for post in posts %}
+      {% include 'post/_show.html' %}
+    {% endfor %}
+  </div>
+  {% endblock %}
+
+  <script type="text/javascript" src="{% static 'js/prism.js' %}"></script>
+
+{% endblock %}
+

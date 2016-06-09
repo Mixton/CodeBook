@@ -1,0 +1,15 @@
+
+.content p, .content a {
+    font-family: 'Arial';
+    font-size: 14px;
+    color: #dedefd;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.content {
+    width: 80%;
+    margin: 0 auto;
+}
+

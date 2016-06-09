@@ -1,0 +1,22 @@
+{% load user_posts %}
+
+<div class=="row">
+  <div class="post-box col-sm-6 col-sm-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="author"><a href="/{% nameof post %}/{% idof post %}">posted</a> by <a href="/{% nameof post %}">{% nameof post %}</a> @ {% dateof post %}</span>
+        <span class="type">{% slangof post %}</span>
+      </div>
+      <div class="panel-body">
+        <pre class="highlight code language-{% langof post %}">
+<code>{% info post 'source' %}</code>
+        </pre>
+
+        <div>
+          <pre class="language-{% langof post %} code_boxes">{% info post 'output' %}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

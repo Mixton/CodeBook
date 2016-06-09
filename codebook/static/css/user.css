@@ -1,0 +1,17 @@
+
+.user-dialog {
+    width: 112px;
+    position: absolute;
+    top: 8px;
+    left: 1%;
+}
+
+.user-dialog .panel-heading span {
+    font-weight: bold;
+}
+
+.user-dialog .panel-heading, .user-dialog .panel-body {
+    padding: 2px;
+    text-align: center;
+}
+

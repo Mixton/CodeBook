@@ -1,0 +1,83 @@
+{% extends 'codebook/__base.html' %}
+{% load staticfiles i18n %}
+
+{% block stylesheets %}
+<style>
+  .input #source {
+    width: 50%;
+    height: 240px;
+  }
+
+  #editor {
+    height: 320px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .input.panel {
+    width: 240px;
+    margin: 15px auto;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .input.panel select {
+    margin-right: 8px;
+  }
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<form action="{% url 'codebook:post:create' %}" method="post">
+  {% csrf_token %}
+
+  <div class="input">
+    <pre id="editor"></pre>
+    <input id="source" name="source" type="hidden" value="">
+  </div>
+
+  <div class="input panel panel-default">
+    <label for="type">Language</label>
+    <select id="type" name="type">
+      <option value="c">C</option>
+      <option value="cpp">C++11</option>
+      <option value="py">Python</option>
+      <option value="pl">Perl</option>
+      <option value="rb">Ruby</option>
+    </select>
+    <input type="submit" value="Run">
+  </div>
+
+</form>
+
+<script type="text/javascript" src="{% static 'ace/ace.js' %}"></script>
+<script>
+
+  /* Initialization for ace editor and whatnot. */
+  var types = {
+    'c': 'ace/mode/c_cpp',
+    'cpp': 'ace/mode/c_cpp',
+    'py': 'ace/mode/python',
+    'pl': 'ace/mode/perl',
+    'rb': 'ace/mode/ruby',
+  };
+
+  var editor = ace.edit("editor");
+  editor.setTheme("ace/theme/twilight");
+  editor.session.setMode(types['c']);
+
+  /* Some callbacks bound to some events for source input. */
+  $("form").submit(function(event) {
+    $("input#source").val(editor.getValue());
+  });
+
+  $("select#type").change(function(event) {
+    editor.getSession().setMode(types[$(this).val()]);
+  });
+</script>
+
+{% endblock %}
+
+

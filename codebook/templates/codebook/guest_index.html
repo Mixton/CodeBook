@@ -1,0 +1,34 @@
+{% extends 'codebook/__base.html' %}
+{% load staticfiles i18n %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500italic,500,700,700italic,900,900italic);
+
+  h1.site-logo {
+    font-family: 'Roboto', cursive;
+    font-weight: bold;
+    font-size: 52px;
+    text-align: center;
+    letter-spacing: 3px;
+    color: #dedefd;
+  }
+
+  .content p {
+    text-align: center;
+  }
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<h1 class="site-logo">CodeBook</h1>
+
+<div class="content">
+  <p>Welcome to CodeBook, please register with us by clicking the person-shaped figure next to Login on the upper right.</p>
+</div>
+
+{% endblock %}
+

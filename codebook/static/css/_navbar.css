@@ -1,0 +1,91 @@
+
+* {
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+}
+
+nav#main-navbar {
+    top: 0;
+    left: 0;
+    position: relative; 
+    width: 100%;
+    margin-bottom: 16px !important;
+}
+
+
+.menu li.item {
+    display: table-cell;
+    text-align: center;
+}
+
+nav#main-navbar, ul.menu, li.item {
+    margin: 0;
+    padding: 0;
+}
+
+ul.menu {
+    display: table;
+    width: 380px;
+    margin: 0 auto;
+}
+
+.menu .item a {
+    display: block;
+    padding: 20px;
+    color: rgba(50, 50, 50, 1.0);
+    background: rgba(240, 240, 240, 0.6);
+}
+
+.menu .item a, .menu .item a:visited, .menu .item a:focus {
+    font-family: "Arial";
+    text-decoration: none;
+}
+
+.menu .item a:hover {
+    background: rgba(50, 50, 50, 0.7);
+    color: rgba(240, 240, 240, 1.0);
+}
+
+#user-widget {
+    width: 120px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right;
+    background: white;
+}
+
+#user-widget span.username {
+    text-align: center;
+    display: block;
+}
+
+#logout_btn {
+    margin-right: 10px;
+}
+
+#login_btn {
+    margin-right: 10px;
+}
+
+#user-widget a {
+    display: inline-block;
+    margin-top: 12px;
+    margin-right: 10px;
+}
+
+#user-widget a, #user-widget a:visited, #user-widget a:focus {
+    font-size: 26px;
+    text-decoration: none;
+}
+
+#user-widget:hover {
+    text-decoration: none;
+    color: black;
+}
+
+

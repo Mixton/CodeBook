@@ -1,0 +1,56 @@
+{% load user_status %}
+
+<style>
+
+#user-widget form input {
+  display: inline-block !important;
+}
+
+#user-widget #username, #user-widget #password {
+  width: 64px;
+}
+
+</style>
+
+<div id="user-widget">
+  {% if user|isAuthed %}
+  <a href="/{% nameof user %}" class="fa fa-user posts"></a>
+  <button type="button" id="logout_btn" class="btn btn-default navbar-btn pull-right" value="Logout">Logout</button><br/>
+  <span class="username">Logged as {% nameof user %}</span>
+
+  <script type="text/javascript">
+    // Make #user-widget button act like a link to deauth when clicked.
+    $('#user-widget button').click(function(event) {
+      event.preventDefault();
+      window.location.href = "/deauth";
+    });
+  </script>
+
+  {% else %}
+
+  <a href="{% url 'codebook:register' %}" class="fa fa-user-plus register"></a>
+  <button type="button" id="login_btn" class="btn btn-default navbar-btn pull-right" value="Login">Login</button>
+
+  <script type="text/javascript">
+    // Make #user-widget button act like a link to deauth when clicked.
+    $('#user-widget button').click(function(event) {
+      event.preventDefault();
+      window.location.href = "/auth";
+    });
+  </script>
+
+
+    <!--
+    <form action="{% url 'codebook:auth' %}" method="post">
+      {% csrf_token %}
+
+      <input id="username" name="username" type="text" required
+             placeholder="Username">
+      <input id="password" name="password" type="password" required
+             placeholder="Password">
+      <input type="submit" id="login_btn" class="btn btn-default navbar-btn pull-right" value="Login">
+    </form>
+    -->
+  {% endif %}
+</div>
+

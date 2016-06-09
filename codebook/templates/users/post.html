@@ -1,0 +1,13 @@
+{% extends 'codebook/__base.html' %}
+{% load staticfiles i18n %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
+<link rel="stylesheet" href="{% static 'css/prism.css' %}">
+{% endblock %}
+
+{% block content %}
+{% include 'post/_show.html' %}
+{% endblock %}
+
+

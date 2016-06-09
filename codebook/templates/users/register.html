@@ -1,0 +1,41 @@
+{% extends 'codebook/__base.html' %}
+{% load staticfiles i18n %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="register-panel panel panel-default">
+  <form action="{% url 'codebook:register' %}" method="post">
+    {% csrf_token %}
+
+    <div class="input">
+      <input id="username" name="username" type="text" required
+             placeholder="Username">
+    </div>
+
+    <div class="input">
+      <input id="email" name="email" type="email" required
+             placeholder="email@example.org">
+    </div>
+
+    <div class="input">
+      <input id="password" name="password" type="password" required
+             placeholder="Password">
+    </div>
+
+    <div class="input">
+      <input id="confirm" name="confirm" type="password" required
+             placeholder="Confirm Password">
+    </div>
+
+    <div class="input">
+      <input type="submit" value="Register">
+    </div>
+
+  </form>
+</div>
+
+{% endblock %}

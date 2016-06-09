@@ -1,0 +1,20 @@
+{% load staticfiles i18n %}
+{% load user_posts %}
+
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
+
+<div class="post-box">
+  <div class="author-box">
+    <span class="author">posted by {{ username }}</span>
+  </div>
+  <div class="source-box">
+    <span class="type">{% info post 'type' %}</span>
+    <pre>{% info post 'source' %}</pre>
+  </div>
+
+  <div class="output-box">
+    <pre>{% info post 'output' %}</pre>
+  </div>
+</div>
+
+

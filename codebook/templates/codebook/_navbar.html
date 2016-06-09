@@ -1,0 +1,12 @@
+{% load user_status %}
+
+<nav id="main-navbar">
+  <ul class="menu">
+    <li class="item"><a href="{% url 'codebook:index' %}">Home</a></li>
+    <li class="item"><a href="{% url 'codebook:post:create' %}">Share</a></li>
+  </ul>
+
+  {% include 'users/_widget.html' %}
+
+</nav>
+

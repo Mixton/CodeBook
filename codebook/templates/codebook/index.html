@@ -1,0 +1,25 @@
+{% extends 'codebook/__base.html' %}
+{% load staticfiles i18n %}
+{% load user_follow %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/post.css' %}">
+<link rel="stylesheet" href="{% static 'css/prism.css' %}">
+<link rel="stylesheet" href="{% static 'css/_follower_list.css' %}">
+{% endblock %}
+
+{% block content %}
+
+  {% include 'users/_follower_list.html' %}
+
+  {% block post_reel %}
+  <div class="post-reel">
+    {% for post in posts %}
+      {% include 'post/_show.html' %}
+    {% endfor %}
+  </div>
+  {% endblock %}
+
+{% endblock %}
+
+
