@@ -1,4 +1,4 @@
-from oiopy.object_storage import ObjectStorageAPI
+from oio.api.object_storage import ObjectStorageAPI
 import json
 
 # Constant connection options
